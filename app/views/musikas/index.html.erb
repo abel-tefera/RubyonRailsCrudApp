@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Musikas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Singer</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @musikas.each do |musika| %>
+      <tr>
+        <td><%= musika.title %></td>
+        <td><%= musika.singer %></td>
+        <td><%= link_to 'Show', musika %></td>
+        <td><%= link_to 'Edit', edit_musika_path(musika) %></td>
+        <td><%= link_to 'Destroy', musika, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Musika', new_musika_path %>
